@@ -10,6 +10,21 @@ public class Kiosk {
     // Menu 관리하는 리스트 //
     public List<Menu> menus;
 
+    // 메뉴 초기 구성 메서드
+    public void initMenus(){
+        // "Bergers" 라는 카테고리 가진 Menu 객체를 만들고, bergerMenu라는 참조 변수가 이 객체 가리킴
+        Menu bergerMenu = new Menu("Bergers");
+
+        //add 이용해 추가
+        bergerMenu.addMenuItem(new MenuItem("1. ShackBurger ", 6.9, "토마토 양상추 쉑소스가 토핑된 치즈버거"));
+        bergerMenu.addMenuItem(new MenuItem("2. SmokeShack  ", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
+        bergerMenu.addMenuItem(new MenuItem("3. CheeseBurger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
+        bergerMenu.addMenuItem(new MenuItem("4. HamBurger   ", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"));
+
+        // menus(List<Menu> 타입) 에 "Bergers"카테고리를 가진 Menu 객체(bergerMenu)를 저장
+        menus.add(bergerMenu);
+    }
+
     // MenuItem을 관리하는 리스트(필드) //
      public List<MenuItem> menuItems;
 
