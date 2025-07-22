@@ -8,10 +8,16 @@ public class Kiosk {
     // MenuItem을 관리하는 리스트(필드) //
     public List<MenuItem> menuItems;
 
+    // 생성자 추가
+    public Kiosk(List<MenuItem> menuItems) {
+        this.menuItems = menuItems;
+    }
+
     public void start() {
 
         // 입력 //
         Scanner scanner = new Scanner(System.in);
+
 
         // 반복문 //
         for (MenuItem item : menuItems) {
