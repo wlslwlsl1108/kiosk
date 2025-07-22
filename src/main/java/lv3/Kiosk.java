@@ -25,11 +25,24 @@ public class Kiosk {
         }
         System.out.println("0. 종료      | 종료");
 
+        // 메뉴 종료 후 반복 //
+        while (true) {
+
         // 숫자 입력 안내문 //
         System.out.print("메뉴를 번호로 선택하세요: ");
 
         // 숫자 입력받기 //
         int number = scanner.nextInt();
+
+
+            // 오류처리 - 음수, 다른 숫자
+            // .size() 사용하면 메뉴 갯수 변경시 영향 x
+            if (number < 0 || number > menuItems.size()) {
+                System.out.println("없는 메뉴입니다. 다시 입력해주세요.");
+                scanner.nextLine();  // 무한반복 안되도록 입력 버퍼 비워주기
+                continue;
+            }
+
 
         // 입력된 숫자에 따른 처리 //
         switch (number) {
@@ -54,6 +67,7 @@ public class Kiosk {
                 System.exit(0);
                 break;
 
+        }
         }
     }
 }
