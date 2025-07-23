@@ -35,12 +35,16 @@ public class Menu {
     }
 
     public void printItems(){
+
+
         System.out.println("[ "+categoryName+" MENU ]");
         for (int i = 0; i < items.size(); i++){
             MenuItem item = items.get(i);
-            System.out.println(item.name + " | " + item.price + " | " + item.description);
+            System.out.println(item.name + " | W " + item.price + " | " + item.description);
         }
         System.out.println("0. 뒤로가기");
+
+
     }
 
 }
