@@ -30,6 +30,8 @@ public class Main {
         bergerMenu.addMenuItem(new MenuItem("2. SmokeShack  ", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
         bergerMenu.addMenuItem(new MenuItem("3. CheeseBurger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
         bergerMenu.addMenuItem(new MenuItem("4. HamBurger   ", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"));
+        // 메뉴 출력
+        bergerMenu.printItems();
 
         // Kiosk 객체 생성
         Kiosk kiosk = new Kiosk(menus);
@@ -37,6 +39,8 @@ public class Main {
         // Kiosk 내 시작하는 함수 호출
         kiosk.start();
 
+        // 메뉴 출력
+        System.out.println("카테고리명: "+ bergerMenu.getCategoryName());
 
         //Scanner 선언//
         // Scanner scanner = new Scanner(System.in);
