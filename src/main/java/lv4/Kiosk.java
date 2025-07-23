@@ -51,6 +51,7 @@ public class Kiosk {
         for (MenuItem item : menuItems) {
             System.out.println(item.name + " | " + item.price + " | " + item.description);
         }
+
         System.out.println("0. 종료      | 종료");
 
         // 메뉴 종료 후 반복 //
@@ -66,10 +67,14 @@ public class Kiosk {
 
                 // 오류처리 - 음수, 다른 숫자
                 // .size() 사용하면 메뉴 갯수 변경시 영향 x
-                if (number < 0 || number > menuItems.size()) {
+                // menuItems -> menus 로 변경
+                if (number < 1 || number > menus.size()) {
                     System.out.println("없는 메뉴입니다. 숫자를 다시 입력해주세요.");
                     scanner.nextLine();  // 무한반복 안되도록 입력 버퍼 비워주기
                     continue;
+                } else {
+                    Menu selectedMenus = menus.get(number-1);
+                    System.out.println("선택한 메뉴: " + selectedMenus.getCategoryName());
                 }
 
                 // 여기부터 삭제 -> switch 문에서 menus.get(number)문으로 변경 예정
