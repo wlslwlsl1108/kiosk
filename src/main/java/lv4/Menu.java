@@ -17,6 +17,7 @@ public class Menu {
         this.items = new ArrayList<>();
     }
 
+
     // 하위 항목 필드 선언
     public List<MenuItem> items;
 
@@ -24,4 +25,22 @@ public class Menu {
     public void addMenuItem(MenuItem item){
         items.add(item);
     }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public List<MenuItem> getItems(){
+        return items;
+    }
+
+    public void printItems(){
+        System.out.println("[ "+categoryName+" MENU ]");
+        for (int i = 0; i < items.size(); i++){
+            MenuItem item = items.get(i);
+            System.out.println(item.name + " | " + item.price + " | " + item.description);
+        }
+        System.out.println("0. 뒤로가기");
+    }
+
 }
