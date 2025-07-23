@@ -11,14 +11,13 @@ public class Kiosk {
     public List<Menu> menus;
 
     // MenuItem을 관리하는 리스트(필드) //
-    // 선언만 되어있어서
-     public List<MenuItem> menuItems;
+    // 삭제 => Menu에서 관리됨
+    // public List<MenuItem> menuItems;
 
     // 생성자 추가
     // start()함수 호출 시 menuItems 초기화 안해줘서 NULL 오류발생함.
     public Kiosk(List<Menu> menus) {
         this.menus = menus;
-        menuItems = new ArrayList<>();
     }
 
     public void start() {
@@ -26,45 +25,38 @@ public class Kiosk {
         // 입력 //
         Scanner scanner = new Scanner(System.in);
 
-
-        // 여기부터 삭제 -> 메뉴구성은 main에서 수행
-
-        // 메뉴 초기 구성 //
-        // "Bergers" 라는 카테고리 가진 Menu 객체를 만들고, bergerMenu라는 참조 변수가 이 객체 가리킴
-        //Menu bergerMenu = new Menu("Bergers");
-
-        //add 이용해 추가
-        //bergerMenu.addMenuItem(new MenuItem("1. ShackBurger ", 6.9, "토마토 양상추 쉑소스가 토핑된 치즈버거"));
-        //bergerMenu.addMenuItem(new MenuItem("2. SmokeShack  ", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
-        //bergerMenu.addMenuItem(new MenuItem("3. CheeseBurger", 6.9, "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));
-        //bergerMenu.addMenuItem(new MenuItem("4. HamBurger   ", 5.4, "비프패티를 기반으로 야채가 들어간 기본버거"));
-
-        // menus(List<Menu> 타입) 에 "Bergers"카테고리를 가진 Menu 객체(bergerMenu)를 저장
-        //menus.add(bergerMenu);
-
-        // 여기까지 삭제
-
-
-        // menus 반복문 추가 - 상위 메뉴(카테고리명)만 출력//
-        for (Menu item : menus) {
-            System.out.println(item.categoryName);
+        // 상위 카테고리 목록 출력
+        System.out.println("[ MAIN MENU ]");
+        for (int i =0; i < menus.size(); i++) {
+            System.out.println(menus.get(i).getCategoryName());
         }
+        System.out.println("메뉴 번호 입력: ");
+
+        // 상위 카테고리 출력문 작성 안해줌
+
+
+        // menus 반복문 추가 - 상위 메뉴(카테고리명)만 출력// - 위랑 중복!
+        //for (Menu item : menus) {
+        //    System.out.println(item.categoryName);
+        //}
 
         // 반복문 //
-        for (MenuItem item : menuItems) {
-            System.out.println(item.name + " | " + item.price + " | " + item.description);
-        }
+        // 삭제 => Menu에서 관리됨
+        //for (MenuItem item : menuItems) {
+        //    System.out.println(item.name + " | " + item.price + " | " + item.description);
+        //}
 
         System.out.println("0. 종료      | 종료");
 
         // 메뉴 종료 후 반복 //
         while (true) {
 
-            // 숫자 입력 안내문 //
-            System.out.print("메뉴를 번호로 선택하세요: ");
-
             // 오류처리 - 문자
             try {
+                // 숫자 입력 안내문 //
+                // try 상단에 있으니 상위메뉴 호출 시 같이 호출됨
+                System.out.print("메뉴를 번호로 선택하세요: ");
+
                 // 숫자 입력받기 //
                 int number = scanner.nextInt();
 
