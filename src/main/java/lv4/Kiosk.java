@@ -11,11 +11,14 @@ public class Kiosk {
     public List<Menu> menus;
 
     // MenuItem을 관리하는 리스트(필드) //
+    // 선언만 되어있어서
      public List<MenuItem> menuItems;
 
     // 생성자 추가
+    // start()함수 호출 시 menuItems 초기화 안해줘서 NULL 오류발생함.
     public Kiosk(List<Menu> menus) {
         this.menus = menus;
+        menuItems = new ArrayList<>();
     }
 
     public void start() {
