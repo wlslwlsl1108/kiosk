@@ -36,7 +36,7 @@ public class Menu {
 
     public void printItems(){
 
-
+        System.out.println();
         System.out.println("[ "+categoryName+" MENU ]");
         for (int i = 0; i < items.size(); i++){
             MenuItem item = items.get(i);
