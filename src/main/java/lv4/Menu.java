@@ -17,7 +17,6 @@ public class Menu {
         this.items = new ArrayList<>();
     }
 
-
     // 하위 항목 필드 선언
     public List<MenuItem> items;
 

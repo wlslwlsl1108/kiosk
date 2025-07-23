@@ -3,7 +3,6 @@ package lv4;
 import java.util.List;
 import java.util.ArrayList;
 
-
 // 클래스 정의 //
 public class MenuItem {
 

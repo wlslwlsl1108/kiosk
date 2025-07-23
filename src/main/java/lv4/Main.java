@@ -15,21 +15,6 @@ public class Main {
         Menu burgerMenu = new Menu("1. BURGERS");
         // MenuItem - 리스트 선언 및 초기화 //
 
-        // (삭제) -> Menu에 이미 구현
-        // List<MenuItem> menuItems = new ArrayList<>();
-        // 인터페이스인 List타입으로 menuItems 라는 변수 생성
-        // ArrayList 라는 실제 객체 생성
-        // add로 값을 추가하면 menuItems 변수에 저장
-        // 리스트를 사용하기 위해서 객체를 생성
-
-        // 메뉴 출력 - kiosk 내부에서 진행되므로 삭제
-        // burgerMenu.printItems();
-
-
-        // 메뉴 출력 - 삭제예정 (필요없음)
-        // System.out.println("카테고리명: "+ burgerMenu.getCategoryName());
-
-
         // add 함수 이용해 new MenuItem(이름, 가격, 설명) List 삽입
         // menuItems.add  ->  bergerMenu.addMenuItem 변경
         // MenuItem 단독 리스트를 상위카테고리(Menu) 안으로 변경
@@ -48,17 +33,5 @@ public class Main {
         // Kiosk 내 시작하는 함수 호출
         kiosk.start();
 
-        //Scanner 선언//
-        // Scanner scanner = new Scanner(System.in);
-
-        //반복문 활용해 List 안에 있는 MenuItem 출력 //
-        // for (MenuItem item : menuItems ){
-        //  for (데이터타입 변수이름 : 데이터(리스트) )
-        //  여기서는 데이터 타입으로 MenuItem(클래스) 명시
-        //  변수이름(원하는이름으로)
-        //  데이터(리스트)= List 선언 시 만든 변수명  => 이 리스트 요소들 하나씩 꺼냄
-        // System.out.println(item.name + " | " + item.price +" | "+ item.description);
     }
-    //System.out.println("0. 종료      | 종료");
-
 }
