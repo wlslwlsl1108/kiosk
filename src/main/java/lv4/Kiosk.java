@@ -7,17 +7,15 @@ import java.util.InputMismatchException;
 
 public class Kiosk {
 
-    // Menu 관리하는 리스트 //
+    // Menu 관리하는 리스트 // -> 선언 및 초기화
     public List<Menu> menus;
 
     // MenuItem을 관리하는 리스트(필드) //
      public List<MenuItem> menuItems;
 
     // 생성자 추가
-    public Kiosk(List<MenuItem> menuItems) {
-        this.menuItems = menuItems;
-        // menus 리스트 변수에 새로운 ArrayList<Menu> 객체 생성해 저장(참조값)
-        this.menus = new ArrayList<Menu>();
+    public Kiosk(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public void start() {
