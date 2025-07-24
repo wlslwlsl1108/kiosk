@@ -36,7 +36,7 @@ lv1 ~ lv5로 진행되며, lv1 ~ lv4 까지 패키지로 구분하여 진행하�
 [lv2. MenuItem 클래스 도입 - 객체 지향 적용 시작]
 - MenuItem 클래스 생성 -> 메뉴 항목 하나를 객체로 표현
 - 필드: 이름(name), 가격(price), 설명(description)
-- List<MenuItem>에 항목들을 저장/관리
+- List&lt;MenuItem&gt;에 항목들을 저장/관리
 - 반복문 활용해 전체 메뉴 항목 출력
 
 
@@ -71,13 +71,13 @@ item.name -> item.getName()
 - Menu 객체 생성 및 MenuItem 항목 추가
 - Kiosk 객체 생성 및 start() 실행
 
-  [MeneItem]
+[MeneItem]
 - 세부 항목 관리 (하위 메뉴 항목)
 - 주요 필드 : name, price, description
 - 생성자 및 getter/setter 제공
 - getter 메서드 통해 항목 정보 출력
 
-  [Menu]
+[Menu]
 - 카테고리 항목 관리 (상위 메뉴 항목)
 - 필드: categoryName, items
 - List<MenuItem>에 항목들을 저장/관리
@@ -85,7 +85,7 @@ item.name -> item.getName()
 - printItems() -> 메뉴 항목 출력 기능
 - getItems() -> 메뉴 항목 리스트 반환 기능
 
-  [Kiosk]
+[Kiosk]
 - 전체 메뉴 흐름 제어
 - 사용자 입/출력, 메뉴 선택 처리 담당
 - 주요 필드 : menus
@@ -100,12 +100,10 @@ item.name -> item.getName()
 ## 실행 예시
 
 1. 상위 카테고리 선택 -> 하위 메뉴 선택 -> 선택 메뉴 표시 (하위 메뉴 재선택 가능)
-![메뉴 선택](img_1.png)
+![메뉴선택](img_10.png)
 2. 상위 카테고리 선택 -> 하위 메뉴 선택 -> 상위 카테고리로 돌아가기
 ![이전 메뉴로 돌아가기](img_2.png)
-
-
-3상위 카테고리에서 종료
+3. 상위 카테고리에서 종료
 ![종료](img_3.png)
 ---
 
