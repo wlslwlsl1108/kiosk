@@ -8,11 +8,21 @@ import java.util.InputMismatchException;
 public class Kiosk {
 
     // Menu 관리하는 리스트 // -> 선언 및 초기화
-    public List<Menu> menus;
+    private List<Menu> menus; //- private(캡슐화)
 
     // 생성자 추가
     // start()함수 호출 시 menuItems 초기화 안해줘서 NULL 오류발생함.
     public Kiosk(List<Menu> menus) {
+        this.menus = menus;
+    }
+
+    //Getter//
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    //Setter//
+    public void setMenus(List<Menu> menus) {
         this.menus = menus;
     }
 
@@ -97,8 +107,9 @@ public class Kiosk {
 
                         //선택항목 출력
                         //이거 때문에 출력이 안되고 반복되었음
+                        //getter(캡슐화) 추가 후, 변경필요
                         MenuItem chosenItem = selectedMenus.getItems().get(itemNumber - 1);
-                        System.out.println("선택한 메뉴: " + chosenItem.name + " | w" + chosenItem.price + " | " + chosenItem.description);
+                        System.out.println("선택한 메뉴: " + chosenItem.getName() + " | w" + chosenItem.getPrice() + " | " + chosenItem.getDescription());
                         System.out.println();
                         break;
 
