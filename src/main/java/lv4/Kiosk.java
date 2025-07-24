@@ -11,7 +11,6 @@ public class Kiosk {
     private List<Menu> menus; //- private(캡슐화)
 
     // 생성자 추가
-    // start()함수 호출 시 menuItems 초기화 안해줘서 NULL 오류발생함.
     public Kiosk(List<Menu> menus) {
         this.menus = menus;
     }
@@ -44,7 +43,6 @@ public class Kiosk {
 
             System.out.print("메뉴 번호 입력: "); // ln 삭제
 
-
             // 오류처리 - 문자
             try {
                 // number = 상위 메뉴 입력 번호 //
@@ -52,7 +50,7 @@ public class Kiosk {
                 int number = scanner.nextInt();
                 scanner.nextLine();
 
-                // switch 문 삭제하면서 삭제됨
+
                 // 종료문 추가
                 if (number == 0){
                     System.out.println("프로그램을 종료합니다.");
@@ -75,7 +73,6 @@ public class Kiosk {
                 while(true){
 
                 // 하위 메뉴 항목 출력
-                // 이게 빠져있어서 출력이 안됐음
                 selectedMenus.printItems();
 
                 System.out.print("메뉴를 번호로 선택하세요: ");
@@ -93,6 +90,7 @@ public class Kiosk {
                         // 뒤로가기 추가
                         if (itemNumber == 0) {
                             System.out.println("이전 메뉴로 돌아갑니다.");
+                            System.out.println();
                             break; // while 밖 상위로 이동
                         }
 
@@ -101,17 +99,14 @@ public class Kiosk {
                         // menuItems -> menus 로 변경
                         if (itemNumber < 1 || itemNumber > selectedMenus.getItems().size()) {
                             System.out.println("없는 메뉴입니다. 숫자를 다시 입력해주세요.");
-                            // scanner.nextLine();  // 무한반복 안되도록 입력 버퍼 비워주기
                             continue;
                         }
 
                         //선택항목 출력
-                        //이거 때문에 출력이 안되고 반복되었음
                         //getter(캡슐화) 추가 후, 변경필요
                         MenuItem chosenItem = selectedMenus.getItems().get(itemNumber - 1);
                         System.out.println("선택한 메뉴: " + chosenItem.getName() + " | w" + chosenItem.getPrice() + " | " + chosenItem.getDescription());
-                        System.out.println();
-                        break;
+                        continue;
 
                     }catch (InputMismatchException e){
                         System.out.println("문자는 입력할 수 없습니다. 숫자를 다시 입력해주세요.");

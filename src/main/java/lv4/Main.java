@@ -13,6 +13,8 @@ public class Main {
         // Menu - 객체 생성 (이름 설정)
         // 상위 항목 추가시 1. 새로운 메뉴항목 작성
         Menu burgerMenu = new Menu("1. BURGERS");
+        Menu drinkMenu = new Menu("2. Drinks");
+        Menu dessertMenu = new Menu("3. Desserts");
         // MenuItem - 리스트 선언 및 초기화 //
 
         // add 함수 이용해 new MenuItem(이름, 가격, 설명) List 삽입
@@ -26,6 +28,8 @@ public class Main {
         // "Burgers" 카테고리를 menus 리스트에 상위 메뉴로 등록
         // 상위 항목 추가시 2. add로 메뉴항목 추가
         menus.add(burgerMenu);
+        menus.add(drinkMenu);
+        menus.add(dessertMenu);
 
         // Kiosk 객체 생성
         Kiosk kiosk = new Kiosk(menus);

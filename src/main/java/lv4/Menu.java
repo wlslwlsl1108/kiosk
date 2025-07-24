@@ -25,6 +25,7 @@ public class Menu {
         items.add(item);
     }
 
+
     //Getter//
     public String getCategoryName() {
         return categoryName;
@@ -32,7 +33,6 @@ public class Menu {
     public List<MenuItem> getItems(){
         return items;
     }
-
 
     //Setter//
     public void setCategoryName(String categoryName) {
@@ -45,7 +45,7 @@ public class Menu {
 
     public void printItems(){
 
-        // getter 추가해주면서 수정필요(캡슐화하면서 수정)
+        // getter 추가해주면서 수정(캡슐화하면서 수정)
         System.out.println();
         System.out.println("[ "+getCategoryName()+" MENU ]");
         for (int i = 0; i < getItems().size(); i++){
